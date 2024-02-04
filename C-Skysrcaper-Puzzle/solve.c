@@ -103,20 +103,21 @@ int	recursion(int grid[4][4], int arr[4][4], int r, int c)
 
 void	solve(int arr[4][4])
 {
-	int	grid[4][4];
+	int	grid[4][4]; //oyun tahtamiz, inside of the grid is junk values, only declaration
 	int	i;
 	int	j;
 	
-	int	ans;
+	int	ans; //answer
 
 	i = -1;
 	while (++i < 4)
 	{
 		j = -1;
 		while (++j < 4)
-			grid[i][j] = -1;
+			grid[i][j] = -1; //oyun tahtasini sifirla
 	}
-	init_grid(arr, grid);
+	init_grid(arr, grid);  //initialize , get ready, apacik kesinlikler varsa, baslamadan bunlari yerlestir, gordugum bina sayisi 1 mi?, -> highest is right in front, 
+							//gordugum 4 tane mi?, 1,1234 seklinde sirali 
 
 	//print_criteria(grid);
 	ans = recursion(grid, arr, 0, 0);

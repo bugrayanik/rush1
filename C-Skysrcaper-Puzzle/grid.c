@@ -17,7 +17,7 @@
 
 void	print_criteria(int arr[4][4]);
 
-void	inc_asign(int grid[4][4], int constant, int roworcolumn, int inc_or_dec) // if "roworcolumn" == o -> row, == 1 -> column, 
+void	inc_asign(int grid[4][4], int constant, int roworcolumn, int inc_or_dec) // if "roworcolumn" == o -> row, == 1 -> column
 {
 	int	z;
 
@@ -45,7 +45,7 @@ void	inc_asign(int grid[4][4], int constant, int roworcolumn, int inc_or_dec) //
 	}
 }
 
-void	asign_one(int grid[4][4], int i, int j) // put highest skyscraper to the correct place
+void	asign_one(int grid[4][4], int i, int j) // put highest skyscraper to the correct place, determine with direction, which input is this?
 {
 	
 	if (i == 0) //colup
@@ -76,20 +76,20 @@ void	asign(int grid[4][4], int *i, int *j, int arr[4][4])
 		inc_asign(grid, *j, 0, 1);
 }
 
-void	init_grid(int arr[4][4], int grid[4][4])
+void	init_grid(int arr[4][4], int grid[4][4]) // arr -> inputs , grid -> oyun tahtasi
 {
 	int	i;
 	int	j;
 
 	i = -1;
-	while (++i < 4)
+	while (++i < 4) //nested while loops
 	{
 		j = -1;
 		while (++j < 4)
 		{
 			if (arr[i][j] == 4 || arr[i][j] == 1) //if i see 4 or 1 skyscraper
 			{
-				asign(grid, &i, &j, arr); 
+				asign(grid, &i, &j, arr);  // i ve j ----> NEREDEYIM?, grid ---> oyun tahtasi, arr -->> inputlar
 			}
 			print_criteria(grid);
 		}
